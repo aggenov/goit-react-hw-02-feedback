@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import {List, Button} from "./FeedbackOptions.styled";
 
 
 
@@ -9,17 +10,19 @@ export class FeedbackOptions extends React.Component {
     const { options, onLeaveFeedback } = this.props
 
     return (     
-      <div>
+      <List>
         { options.map( option => {
-            return (<button
-              key={ option }
-              onClick={()=>{onLeaveFeedback( option )}}
-            > 
-            {option.charAt(0).toUpperCase() + option.slice(1)} 
-            </button>)
+            return (
+              <li key={ option }>
+                <Button onClick={()=>{onLeaveFeedback( option.toLowerCase() )}}> 
+                  {option.charAt(0).toUpperCase() + option.slice(1)} 
+                </Button>
+              </li>
+            
+            )
           })
         }
-      </div>
+      </List>
     )
   }
 }

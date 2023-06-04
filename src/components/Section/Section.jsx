@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import style from './Section.styled';
+
 
 export class Section extends React.Component {
 
@@ -7,10 +9,10 @@ export class Section extends React.Component {
     const { title, children } = this.props;
     
     return (
-      <section>
+      <style.Section>
         <h2>{title}</h2>
         {children}
-      </section>
+      </style.Section>
     )
   }
 }
