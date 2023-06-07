@@ -29,7 +29,7 @@ export class App extends React.Component{
   }
 
 
-  handleChangeCount(data) {
+  handleChangeCount = (data) => {
     this.setState(prevState => ({
          [data]: prevState[data] + 1,
        }))
@@ -45,7 +45,7 @@ export class App extends React.Component{
         <Section title ="Please liave feedback" >
           <FeedbackOptions
             options={Object.keys(this.state)}
-            onLeaveFeedback={this.handleChangeCount.bind(this) }
+            onLeaveFeedback={this.handleChangeCount }
           />
         </Section>
 
